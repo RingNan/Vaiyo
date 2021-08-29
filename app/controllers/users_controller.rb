@@ -92,37 +92,9 @@ class UsersController < ApplicationController
       params[:user][:waddress] = @user.waddress
     end
   
-    if current_user.role_id != 5
-      if (params[:user][:waddress] != current_user.waddress && User.exists?(waddress: params[:user][:waddress]))
-        flash[:alert] = 'This user is already exists. Please choose different wallet address.'
-        return render ('edit')
-      end
-
-      fetch_verification = Verification.where(:user_id => session[:user_id]).first
-
-      verification = Hash.new
-      verification['name'] = params[:user][:name]
-      verification['waddress'] = params[:user][:waddress]
-      verification['language'] = params[:user][:language]
-      verification['token'] = SecureRandom.alphanumeric(60)
-      verification['user_id'] = session[:user_id]
-
-      if !params[:user][:image].blank?
-        verification['image'] = params[:user][:image]
-      elsif fetch_verification.present?
-        verification['image'] = fetch_verification.image
-      else
-        verification['image'] = @user.image
-      end
-
-      # raise RuntimeError, verification['image']
-
-      if Verification.find_or_initialize_by(:user_id => session[:user_id]).update_attributes(verification)
-        acc_info_verification(@user, verification['token'], params[:user][:waddress])
-        return render ('edit')
-      else
-        flash[:alert] = 'Invalid image type: allowed types are jpg, jpeg, png'
-      end
+    if (params[:user][:waddress] != current_user.waddress && User.exists?(waddress: params[:user][:waddress]))
+      flash[:alert] = 'This user is already exists. Please choose different wallet address.'
+      return render ('edit')
     else
       if @user.update_attributes(user_params)
         @user.update_attributes(email_verified: false) if user_params[:waddress] != @user.waddress

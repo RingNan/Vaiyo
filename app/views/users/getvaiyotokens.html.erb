@@ -27,7 +27,7 @@
       	<div class="vaiyo-calc-form">
         	<p class="text-right balance-font" id="balance"></p>
             <div class="d-flex">
-              <input type="text" onkeypress="return /[0-9.]/i.test(event.key)" class="flex-fill normal-font vaiyo-input" placeholder="0.0" />
+              <input type="text" id="amountinput" onkeypress="return /[0-9.]/i.test(event.key)" class="flex-fill normal-font vaiyo-input" placeholder="0.0" />
               <a class="flex-fill text-center normal-font pt-2 pr-3">MAX</a>
               <%= image_tag(asset_url('bnb.png'), class: "bnb-icon flex-fill", alt:"") %>
               <div class="flex-fill text-center normal-font pt-2 pl-2">BNB</div>

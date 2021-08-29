@@ -199,6 +199,11 @@ $min-layout-breakpoint-ipad: 768px;
     padding-right: 40px;
 }
 
+.select-user-lang .dropdown-menu {
+    max-width: 100%;
+    min-width: 100% !important;
+}
+
 //common css
 .title-light {
     font-size: 14px;

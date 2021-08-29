@@ -1,16 +1,15 @@
 # Greenlight
 
 ![Coverage
-!Status](https://coveralls.io/repos/github/bigbluebutton/greenlight/badge.svg?branch=master)
-![Docker Pulls](https://img.shields.io/docker/pulls/bigbluebutton/greenlight.svg)
+!Status](https://coveralls.io/repos/github/bigbluebutton/greenlight/badge.svg?branch=master) ![Docker Pulls](https://img.shields.io/docker/pulls/bigbluebutton/greenlight.svg)
 
 Greenlight is a simple front-end interface for your BigBlueButton server. At its heart, Greenlight provides a minimalistic web-based application that allows users to:
 
-- Signup/Login with Google, Office365, OpenID Connect, or through the application itself.
-- Manage your account settings and user preferences.
-- Create and manage your own personal rooms ([BigBlueButton](https://github.com/bigbluebutton/bigbluebutton) sessions).
-- Invite others to your room using a simple URL.
-- View recordings and share them with others.
+  * Signup/Login with Google, Office365, OpenID Connect, or through the application itself.
+  * Manage your account settings and user preferences.
+  * Create and manage your own personal rooms ([BigBlueButton](https://github.com/bigbluebutton/bigbluebutton) sessions).
+  * Invite others to your room using a simple URL.
+  * View recordings and share them with others.
 
 Interested? Try Greenlight out on our [demo server](https://demo.bigbluebutton.org/gl)!
 

@@ -96,15 +96,15 @@ Rails.application.routes.draw do
 
     # Account management.
     get '/:user_uid/edit', to: 'users#edit', as: :edit_user
-    get '/:user_uid/change_password', to: 'users#change_password', as: :change_password
+    # get '/:user_uid/change_password', to: 'users#change_password', as: :change_password
     get '/:user_uid/delete_account', to: 'users#delete_account', as: :delete_account
     post '/:user_uid/edit', to: 'users#update', as: :update_user
-    post '/:user_uid/change_password', to: 'users#update_password', as: :update_password
+    # post '/:user_uid/change_password', to: 'users#update_password', as: :update_password
     delete '/:user_uid', to: 'users#destroy', as: :delete_user
 
     # All user recordings
     get '/:user_uid/recordings', to: 'users#recordings', as: :get_user_recordings
-    # All user recordings
+    # Show screen that get tokens.
     get '/:user_uid/getvaiyotokens', to: 'users#getvaiyotokens', as: :get_vaiyotokens
     # All user recordings of specific room
     get '/:user_uid/recordings/:room_uid', to: 'rooms#room_recordings', as: :get_room_recordings

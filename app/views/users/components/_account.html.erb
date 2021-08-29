@@ -45,22 +45,34 @@
       </div>
     </div>
     
-    <%= f.label :provider, t("settings.account.provider"), class: "form-label" %>
-    <% if @user.provider === 'greenlight' %>
-      <%= f.text_field :provider, class: "form-control", readonly: "", value: 'Vaiyo' %>
-    <% else %>
-      <%= f.text_field :provider, class: "form-control", readonly: "" %>
-    <% end %>
-    
-    <br>
-    <%= f.label :language, t("settings.account.language"), class: "form-label" %>
-    <select id="language-dropdown" class="selectpicker show-tick w-50">
-      <% language_options.each do |lang| %>
-        <option value="<%=lang[1]%>" <%= 'selected' if lang[1] == @user.language %>><%= lang[0] %></option>
+    <% if false %>
+      <%= f.label :provider, t("settings.account.provider"), class: "form-label" %>
+      <% if @user.provider === 'greenlight' %>
+        <%= f.text_field :provider, class: "form-control", readonly: "", value: 'Vaiyo' %>
+      <% else %>
+        <%= f.text_field :provider, class: "form-control", readonly: "" %>
       <% end %>
-    </select>
-    <%= f.hidden_field :language, id: "user_language", value: @user.language %>
+    <% end %>
 
+    <br>
+    <div class="row">
+      <div class="col-sm-6 mb-4">
+        <%= f.label :email, t("email"), class: "form-label" %>
+        <div class="input-icon">
+          <%= f.email_field :email, class: "form-control #{form_is_invalid?(@user, :email)}", placeholder: t("email"), readonly: readonly %>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-4 select-user-lang">
+        <%= f.label :language, t("settings.account.language"), class: "form-label" %>
+        <select id="language-dropdown" class="selectpicker show-tick w-100">
+          <% language_options.each do |lang| %>
+            <option value="<%=lang[1]%>" <%= 'selected' if lang[1] == @user.language %>><%= lang[0] %></option>
+          <% end %>
+        </select>
+        <%= f.hidden_field :language, id: "user_language", value: @user.language %>
+      </div>
+    </div>
 
     <%= f.label :roles, t("settings.account.roles"), class: "form-label mt-5" %>
     <% if current_user.role.get_permission("can_manage_users") %>
