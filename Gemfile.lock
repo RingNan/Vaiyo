@@ -242,8 +242,6 @@ GEM
     mini_magick (4.11.0)
     mini_mime (1.0.2)
     mini_portile2 (2.5.0)
-    mini_racer (0.4.0)
-      libv8-node (~> 15.14.0.0)
     minitest (5.14.4)
     msgpack (1.4.2)
     multi_json (1.15.0)
@@ -513,7 +511,6 @@ DEPENDENCIES
   local_time (~> 2.1.0)
   lograge (~> 0.11.2)
   mimemagic!
-  mini_racer
   net-ldap (~> 0.17.0)
   omniauth (~> 1.9.1)
   omniauth-bn-launcher (~> 0.1.3)

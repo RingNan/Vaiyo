@@ -29,7 +29,7 @@
   box-shadow: 0 0 0 2px $primary-color-lighten !important;
 }
 
-.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before{
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
   background-color: $primary-color !important;
   border-color: $primary-color !important;
   color: white !important;

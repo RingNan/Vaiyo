@@ -34,6 +34,15 @@ a.signin-link {
   }
 }
 
+.wallet--toggle-display-wallet-options {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
 .signin-link {
   .signin-icon {
     vertical-align: middle;
