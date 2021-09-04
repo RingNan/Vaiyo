@@ -20,18 +20,18 @@
           <h2 class="mx-auto d-block"><%= t("login_title") %></h2>
         </div>
         <div class="col-lg-6 mx-auto p-5 d-block">
-          <%= image_tag(asset_url('metamask-alternative.png'), alt:"") %>
+          <%= image_tag(asset_url('metamask-alternative.png'), id:"certain-image", class:"wallet-image", alt:"") %>
         </div>
         <div class="m-5">
-          <button type="button" value="Sign In" class="btn btn-primary" onclick="connectWithWallet('metamask', 'signin')">
-            Connect Wallet
+          <button type="button" value="Sign In" class="btn btn-primary btn-lg" onclick="signinWithWallet()">
+            Sign In
           </button>
         </div>
-        <div class=".wallet--toggle-display-wallet-options m-5">
-          <i class="material-icons">keyboard_arrow_down</i>
-          <i class="material-icons">face</i>
-          <h6>Use a different wallet</h6>
+        <div class="toggle-display-wallet-options m-5" onclick="togleOtherWallet()" data-toggle="collapse" data-target="#demo">
+          <i class="material-icons" id="otherwallet">keyboard_arrow_right</i>
+          <h4 class="mt-2">Use a different wallet</h4>
         </div>
       </div>
   </div>
+
 </div>

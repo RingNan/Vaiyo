@@ -1,4 +1,5 @@
 let currentAccount = null;
+let currentWallet = "metamask";
 function post(path, params, method = "post") {
   // The rest of this code assumes you are not using a library.
   // It can be made less verbose if you use one.
@@ -19,6 +20,27 @@ function post(path, params, method = "post") {
 
   document.body.appendChild(form);
   form.submit();
+}
+
+async function signinWithWallet() {
+  connectWithWallet(currentWallet, "signin");
+}
+
+async function setWallet(wallettype) {
+  currentWallet = wallettype;
+  switch (wallettype) {
+    case "metamask":
+      document.getElementById("certain-image").src = "<%= asset_path('metamask-alternative.png')%>";
+      break;
+    case "binance":
+      document.getElementById("certain-image").src = "<%= asset_path('binance.png')%>";
+      break;
+    case "mathwallet":
+      document.getElementById("certain-image").src = "<%= asset_path('mathwallet.png')%>";
+      break;
+    default:
+    // code block
+  }
 }
 
 async function connectWithWallet(wallettype, where) {
